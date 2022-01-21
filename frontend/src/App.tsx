@@ -10,27 +10,28 @@ import ContactPage from './components/contact/ContactPage';
 import ProductDetails from './components/catalog/ProductDetails';
 import { ToastContainer } from 'react-toastify';
 import BasketPage from './components/baskets/BasketPage';
-import { useStoreContext } from './context/StoreContext';
 import { getCookie } from './util/util';
 import agent from './api/agent';
 import LoadComponent from './LoadComponent';
 import CheckoutPage from './components/checkout/CheckoutPage';
+import { useAppDispatch } from './store/configureStore';
+import { setBasket } from './components/baskets/basketSlice';
 
 function App() {
-  const {setBasket} = useStoreContext();
+  const dispatch = useAppDispatch();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const buyerId = getCookie('buyerId');
     if(buyerId) {
       agent.Basket.get()
-        .then(basket => setBasket(basket))
+        .then(basket => dispatch(setBasket(basket)))
         .catch(error => console.log(error))
         .finally(() => setLoading(false))
     } else {
       setLoading(false);
     }
-  }, [setBasket])
+  }, [dispatch])
 
   const [darkMode, setDarkMode] = useState(false);
   const paletteType = darkMode ? 'dark' : 'light';

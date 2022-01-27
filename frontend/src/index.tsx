@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './styles.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createBrowserHistory } from 'history';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './store/configureStore';
 
+export const history = createBrowserHistory();
 
 ReactDOM.render(
   <React.StrictMode>

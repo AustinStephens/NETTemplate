@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import { Product } from "../../models/product";
 import { useAppDispatch, useAppSelector } from "../../store/configureStore";
 import { currencyFormat } from "../../util/util";
-import { addBasketItemAsync, setBasket } from "../baskets/basketSlice";
+import { addBasketItemAsync } from "../baskets/basketSlice";
 
 interface Props {
     product: Product;

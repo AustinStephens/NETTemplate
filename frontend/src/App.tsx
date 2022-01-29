@@ -18,6 +18,8 @@ import Login from './components/account/Login';
 import Register from './components/account/Register';
 import { fetchCurrentUser } from './components/account/accountSlice';
 import PrivateRoute from './components/checkout/PrivateRoute';
+import OrdersPage from './components/orders/OrdersPage';
+import OrderDetails from './components/orders/OrderDetails';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -66,6 +68,8 @@ function App() {
         <Route path='/contact' component={ContactPage} />
         <Route path='/basket' component={BasketPage} />
         <PrivateRoute path='/checkout' component={CheckoutPage} />
+        <PrivateRoute exact path='/orders' component={OrdersPage} />
+        <PrivateRoute path='/orders/:id' component={OrderDetails} />
         <Route path='/login' component={Login} />
         <Route path='/register' component={Register} />
       </Container>

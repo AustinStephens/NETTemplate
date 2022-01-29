@@ -3,6 +3,7 @@ using System;
 using Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backend.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    partial class StoreContextModelSnapshot : ModelSnapshot
+    [Migration("20220129011955_NameChange")]
+    partial class NameChange
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.1");
@@ -165,14 +167,14 @@ namespace Backend.Data.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "13c1a801-db64-4230-9f3e-4a8cfddde536",
+                            ConcurrencyStamp = "0eaa972a-99de-471c-881b-9ed719cf7a0d",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "aecf581c-508d-4259-9d3c-93e738275bf2",
+                            ConcurrencyStamp = "c1597797-a474-4e7c-abf5-f2b478c052c1",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -260,7 +262,7 @@ namespace Backend.Data.Migrations
                     b.Property<string>("Country")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("FirstName")
+                    b.Property<string>("Firstname")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("LastName")
@@ -414,7 +416,7 @@ namespace Backend.Data.Migrations
                             b1.Property<string>("Country")
                                 .HasColumnType("TEXT");
 
-                            b1.Property<string>("FirstName")
+                            b1.Property<string>("Firstname")
                                 .HasColumnType("TEXT");
 
                             b1.Property<string>("LastName")

@@ -3,6 +3,7 @@ using System;
 using Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backend.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    partial class StoreContextModelSnapshot : ModelSnapshot
+    [Migration("20220127233518_OrderEntityAdded")]
+    partial class OrderEntityAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.1");
@@ -165,14 +167,14 @@ namespace Backend.Data.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "13c1a801-db64-4230-9f3e-4a8cfddde536",
+                            ConcurrencyStamp = "7073af43-7586-4b31-9d20-b9cf251f4238",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "aecf581c-508d-4259-9d3c-93e738275bf2",
+                            ConcurrencyStamp = "2dfb8e5b-bebf-4440-af29-c55bb52bb014",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -260,10 +262,7 @@ namespace Backend.Data.Migrations
                     b.Property<string>("Country")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("FirstName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LastName")
+                    b.Property<string>("FullName")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("State")
@@ -414,10 +413,7 @@ namespace Backend.Data.Migrations
                             b1.Property<string>("Country")
                                 .HasColumnType("TEXT");
 
-                            b1.Property<string>("FirstName")
-                                .HasColumnType("TEXT");
-
-                            b1.Property<string>("LastName")
+                            b1.Property<string>("FullName")
                                 .HasColumnType("TEXT");
 
                             b1.Property<string>("State")

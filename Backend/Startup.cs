@@ -61,7 +61,7 @@ namespace API
             services.AddCors();
             services.AddIdentityCore<User>(opt => {
                     opt.User.RequireUniqueEmail = true;
-                }).AddRoles<IdentityRole>().AddEntityFrameworkStores<StoreContext>();
+                }).AddRoles<Role>().AddEntityFrameworkStores<StoreContext>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt => {
                     opt.TokenValidationParameters = new TokenValidationParameters {
                         ValidateIssuer = false,

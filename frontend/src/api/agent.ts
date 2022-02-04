@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { PaginatedResponse } from "../models/pagination";
 import { store } from "../store/configureStore";
 
-axios.defaults.baseURL = 'https://localhost:7210/api/';
+axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 axios.defaults.withCredentials = true;
 
 const responseBody = (response: AxiosResponse) => response.data; 
@@ -87,12 +87,17 @@ const Order = {
     create: (values: any) => requests.post('orders', values)
 }
 
+const Payments = {
+    createPaymentIntent: () => requests.post('payments', {})
+}
+
 const agent = {
     Catalog,
     TestErrors,
     Basket,
     Account,
-    Order
+    Order,
+    Payments
 }
 
 export default agent;

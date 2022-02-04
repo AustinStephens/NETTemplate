@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Backend.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20220204021401_PostGresInit")]
-    partial class PostGresInit
+    [Migration("20220204101905_PostgresInit")]
+    partial class PostgresInit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -193,14 +193,14 @@ namespace Backend.Data.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "7c19b053-018d-4abf-a787-7a2f4b2383aa",
+                            ConcurrencyStamp = "5027de28-3fed-45d9-aaee-fe206a4029d7",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "9482b966-e5e4-47c6-ab6a-e26ec661fe02",
+                            ConcurrencyStamp = "7a441e7e-d4ab-4369-ba53-cd5977021c06",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
